@@ -128,8 +128,8 @@ function check_folder_is_safe() {
 if [ "${SAFEDIR__DISABLE_CHECKS}" != "1" ]; then
 
     if check_folder_is_safe "${SAFEDIR__DIRPATH}"                 ; then echo OK; else echo "Not safe [1]"; exit -51; fi
-    if check_folder_is_safe "${SAFEDIR__DIRPATH}/journal" "NOTAG" ; then echo OK; else exit "Not safe [2]"; exit -52; fi
-    if check_folder_is_safe "${SAFEDIR__DIRPATH}/admin"   "NOTAG" ; then echo OK; else exit "Not safe [3]"; exit -53; fi
+    # if check_folder_is_safe "${SAFEDIR__DIRPATH}/journal" "NOTAG" ; then echo OK; else exit "Not safe [2]"; exit -52; fi
+    # if check_folder_is_safe "${SAFEDIR__DIRPATH}/admin"   "NOTAG" ; then echo OK; else exit "Not safe [3]"; exit -53; fi
 
 fi
 
