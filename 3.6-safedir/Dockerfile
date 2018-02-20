@@ -1,6 +1,6 @@
 # v1.0.0    2017-10-26     webmaster@highskillz.com
 #
-FROM ez123/db-mongo:3.2b
+FROM ez123/db-mongo:3.6
 
 ENV SFD_ENTRYPOINT="/usr/local/bin/docker-entrypoint.keygen.sh"
 

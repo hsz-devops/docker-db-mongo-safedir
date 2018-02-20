@@ -20,6 +20,7 @@ rebuild: _build_image
 
 _build_image: _check-env-base
 	docker build $(_DOCKER_BUILD_OPTS) -t $(IMAGE_NAME):3.2     ./3.2-safedir
+	docker build $(_DOCKER_BUILD_OPTS) -t $(IMAGE_NAME):3.6     ./3.6-safedir
 
 # --------------------------------------------------------------------------
 _check-env-base:
@@ -32,10 +33,13 @@ shell:shell-32
 shell-32: _check-env-base
 	docker run --rm -it $(IMAGE_NAME):3.2     bash
 
+shell-36: _check-env-base
+	docker run --rm -it $(IMAGE_NAME):3.6     bash
 
 # --------------------------------------------------------------------------
 rmi: _check-env-base
 	docker rmi $(IMAGE_NAME):3.2
+	docker rmi $(IMAGE_NAME):3.6
 
 # --------------------------------------------------------------------------
 clean-junk:
