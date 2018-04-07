@@ -22,6 +22,10 @@ _build_image: _check-env-base
 	docker build $(_DOCKER_BUILD_OPTS) -t $(IMAGE_NAME):3.2     ./3.2-safedir
 	docker build $(_DOCKER_BUILD_OPTS) -t $(IMAGE_NAME):3.6     ./3.6-safedir
 
+docker-push:
+	docker push $(IMAGE_NAME):3.2
+	docker push $(IMAGE_NAME):3.6
+
 # --------------------------------------------------------------------------
 _check-env-base:
 	test -n "$(TIMESTAMP)"
